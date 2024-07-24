@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 class GradeBook:
     """
     Manages student and course records, including adding students and courses,
