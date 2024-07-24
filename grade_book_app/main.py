@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 class GradeBook:
     def __init__(self):
     # initialization code here
