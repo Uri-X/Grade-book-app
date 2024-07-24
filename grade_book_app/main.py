@@ -1,7 +1,38 @@
 #!/usr/bin/python3
+
 class GradeBook:
     def __init__(self):
-    # initialization code here
+        # Initialization code here
+        self.students = []
+        self.courses = []
+
+    def add_student(self):
+        # Code to add a student
+        pass
+
+    def add_course(self):
+        # Code to add a course
+        pass
+
+    def register_student_for_course(self):
+        # Code to register a student for a course
+        pass
+
+    def calculate_GPA(self):
+        # Code to calculate GPA
+        pass
+
+    def calculate_ranking(self):
+        # Code to calculate ranking
+        return []  # Return a list of students
+
+    def search_by_grade(self):
+        # Code to search students by grade
+        return []  # Return a list of students
+
+    def generate_transcript(self):
+        # Code to generate a transcript
+        return "Transcript"
 
 def main():
     """
@@ -49,3 +80,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
