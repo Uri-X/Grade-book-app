@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 class Student:
     """
     Represents a student with an email, name, and registered courses.
