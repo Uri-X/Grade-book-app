@@ -1,3 +1,7 @@
+class GradeBook:
+    def __init__(self):
+    # initialization code here
+
 def main():
     """
     Main function to run the GradeBook application.

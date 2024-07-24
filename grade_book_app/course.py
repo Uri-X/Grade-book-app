@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 class Course:
     """
     Represents a course with a name, trimester, and number of credits.
