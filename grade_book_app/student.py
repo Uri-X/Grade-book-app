@@ -22,7 +22,6 @@ class Student:
         self.grades[course_name] = grade
 course.py
 python
-Copy code
 class Course:
     def __init__(self, name, trimester, credits):
         self.name = name
