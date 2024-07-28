@@ -119,25 +119,3 @@ class GradeBook:
             print(f"GPA for {student.names} ({student.email}) is {student.GPA:.2f}")
         else:
             print("Student not found.")
-
-# Example usage
-if __name__ == "__main__":
-    grade_book = GradeBook()
-
-    # Adding students
-    grade_book.add_student("student1@example.com", "John Doe")
-    grade_book.add_student("student2@example.com", "Jane Smith")
-
-    # Adding courses
-    grade_book.add_course("Math 101", "Fall 2023", 3)
-    grade_book.add_course("English 101", "Fall 2023", 2)
-
-    # Registering students for courses
-    grade_book.register_student_for_course("student1@example.com", "Math 101", 3.5)
-    grade_book.register_student_for_course("student1@example.com", "English 101", 4.0)
-    grade_book.register_student_for_course("student2@example.com", "Math 101", 3.0)
-    grade_book.register_student_for_course("student2@example.com", "English 101", 3.5)
-
-    # Calculating GPA for a specific student
-    grade_book.calculate_GPA_for_student("student1@example.com")
-    grade_book.calculate_GPA_for_student("student2@example.com")

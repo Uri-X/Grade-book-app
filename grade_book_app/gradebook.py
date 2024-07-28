@@ -51,6 +51,20 @@ class GradeBook:
         else:
             print("Student or Course not found.")
 
+    def calculate_GPA_for_student(self, email):
+        """
+        Calculates and updates the GPA for a specific student.
+        
+        Args:
+        email (str): The student's email address.
+        """
+        student = next((s for s in self.student_list if s.email == email), None)
+        if student:
+            student.calculate_GPA()
+            print(f"GPA for {student.names} ({student.email}) is {student.GPA:.2f}")
+        else:
+            print("Student not found.")
+
     def calculate_GPA(self):
         """
         Calculates and updates the GPA for all students in the student_list.
