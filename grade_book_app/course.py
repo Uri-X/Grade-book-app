@@ -40,3 +40,104 @@ class Student:
         grade (float): The grade received in the course.
         """
         self.courses_registered[course] = grade
+
+class Course:
+    """
+    Represents a course with a name, trimester, and credits.
+    """
+    def __init__(self, name, trimester, credits):
+        """
+        Initializes a Course object.
+
+        Args:
+        name (str): The course name.
+        trimester (str): The trimester in which the course is taken.
+        credits (int): The number of credits for the course.
+        """
+        self.name = name
+        self.trimester = trimester
+        self.credits = credits
+
+class GradeBook:
+    """
+    Represents a grade book that manages students and courses.
+    """
+    def __init__(self):
+        """
+        Initializes a GradeBook object.
+        """
+        self.students = []
+        self.courses = []
+
+    def add_student(self, email, names):
+        """
+        Adds a student to the grade book.
+
+        Args:
+        email (str): The student's email address.
+        names (str): The student's full name.
+        """
+        student = Student(email, names)
+        self.students.append(student)
+
+    def add_course(self, name, trimester, credits):
+        """
+        Adds a course to the grade book.
+
+        Args:
+        name (str): The course name.
+        trimester (str): The trimester in which the course is taken.
+        credits (int): The number of credits for the course.
+        """
+        course = Course(name, trimester, credits)
+        self.courses.append(course)
+
+    def register_student_for_course(self, student_email, course_name, grade):
+        """
+        Registers a student for a course with a given grade.
+
+        Args:
+        student_email (str): The student's email address.
+        course_name (str): The course name.
+        grade (float): The grade received in the course.
+        """
+        student = next((s for s in self.students if s.email == student_email), None)
+        course = next((c for c in self.courses if c.name == course_name), None)
+        if student and course:
+            student.register_for_course(course, grade)
+
+    def calculate_GPA_for_student(self, student_email):
+        """
+        Calculates the GPA for a specific student.
+
+        Args:
+        student_email (str): The student's email address.
+        """
+        student = next((s for s in self.students if s.email == student_email), None)
+        if student:
+            student.calculate_GPA()
+            print(f"GPA for {student.names} ({student.email}) is {student.GPA:.2f}")
+        else:
+            print("Student not found.")
+
+# Example usage
+if __name__ == "__main__":
+    grade_book = GradeBook()
+
+    # Adding students
+    grade_book.add_student("student1@example.com", "John Doe")
+    grade_book.add_student("student2@example.com", "Jane Smith")
+
+    # Adding courses
+    grade_book.add_course("Math 101", "Fall 2023", 3)
+    grade_book.add_course("English 101", "Fall 2023", 2)
+
+    # Registering students for courses
+    grade_book.register_student_for_course("student1@example.com", "Math 101", 3.5)
+    grade_book.register_student_for_course("student1@example.com", "English 101", 4.0)
+    grade_book.register_student_for_course("student2@example.com", "Math 101", 3.0)
+    grade_book.register_student_for_course("student2@example.com", "English 101", 3.5)
+
+    # Calculating GPA for a specific student
+    grade_book.calculate_GPA_for_student("student1@example.com")
+    grade_book.calculate_GPA_for_student("student2@example.com")
