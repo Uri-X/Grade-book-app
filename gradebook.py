@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+from student import Student
+from course import Course
+
 class GradeBook:
     def __init__(self):
         self.student_list = []
