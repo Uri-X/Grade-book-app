@@ -10,7 +10,8 @@ def main():
         print("4. Calculate ranking")
         print("5. Search by grade")
         print("6. Generate transcript")
-        print("7. Exit")
+        print("7. View students")
+        print("8. Exit")
         choice = input("Enter your choice: ")
 
         if choice == '1':
@@ -45,6 +46,8 @@ def main():
             gradebook.generate_transcript(email)
             print("Transcript generated successfully.")
         elif choice == '7':
+            gradebook.view_students()
+        elif choice == '8':
             print("Exiting the program.")
             break
         else:
