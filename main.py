@@ -1,6 +1,11 @@
 from gradebook import GradeBook
+from captcha import verify_captcha
 
 def main():
+    if not verify_captcha():
+        print("CAPTCHA verification failed. Exiting.")
+        return
+
     gradebook = GradeBook()
     while True:
         print("Choose an action:")
@@ -18,11 +23,10 @@ def main():
             email = input("Enter student email: ")
             names = input("Enter student names: ")
             gradebook.add_student(email, names)
-            print("Student added successfully.")
         elif choice == '2':
             name = input("Enter course name: ")
             trimester = input("Enter course trimester: ")
-            credits = float(input("Enter course credits: "))  # Changed to float
+            credits = float(input("Enter course credits: "))
             gradebook.add_course(name, trimester, credits)
             print("Course added successfully.")
         elif choice == '3':
